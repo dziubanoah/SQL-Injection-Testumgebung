@@ -1,4 +1,5 @@
 var mysql = require("mysql");
+var http = require("http");
 
 var con = mysql.createConnection({
     host: "localhost",
@@ -6,6 +7,11 @@ var con = mysql.createConnection({
     passwort: "",
     database: "employee_test"
 });
+http.createServer((req, res) => {
+    let body = "";
+    req.on("data", chunk => body += chunk); //empfängt die Daten
+    req.on("end", () => {
+        let Length = body; 
 
 con.connect(function(err) {
     if (err) throw err;
@@ -13,7 +19,7 @@ con.connect(function(err) {
     let PersonID = "2005";
     con.query("SELECT Name FROM persons WHERE PersonID=" + PersonID + ";", function(err, result, fields) {
         if (err) throw err;
-        console.log(result.length)
+        console.log(result[0].Name)
         if (result.length > 0 && result[0].Name == "Noah"){
             console.log("result equals Noah");
         }
@@ -22,3 +28,7 @@ con.connect(function(err) {
         };
     });
 });
+
+    })
+        }).listen(100)
+ 
