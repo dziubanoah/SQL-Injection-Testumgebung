@@ -3,6 +3,8 @@ const mysql = require("mysql");
 const app = express();
 const PORT = 1234;
 const fs = require("fs");
+const cors = require('cors');
+app.use(cors());
 
 var con = mysql.createConnection({
     host: "localhost",
@@ -15,7 +17,8 @@ app.use(express.json());
 
 app.post("/send-json", (req, res) => {
     const JSONData  =req.body;
-    fs.writeFile("JSON.txt", JSON.stringify(JSONData, null, 2), (err) => {
+    console.log(JSONData, "output");
+    fs.writeFile("write.txt", JSON.stringify(JSONData, null, 2), (err) => {
         if (err) {
             console.error("Fehler beim beschreiben der Datei", err);
             return res.status(500).send("Fehler beim schreiben der Datei. ");

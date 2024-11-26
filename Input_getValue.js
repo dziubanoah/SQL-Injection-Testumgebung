@@ -13,7 +13,7 @@ submit.addEventListener("click", function() {
         };
     
 
-fetch("http://localhost:4567/send-json", {
+fetch("http://localhost:1234/send-json", {
     method: 'POST',
         headers: {
             "Content-Type": "application/json",

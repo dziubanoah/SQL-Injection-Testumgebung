@@ -1,4 +1,0 @@
-{
-  "passwort": "afaf",
-  "ID": "safa"
-}
