@@ -20,7 +20,7 @@ fetch("http://localhost:100", {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username: MitarbeiterID.value, passwort: passwort.value }),
+        body: JSON.stringify({JSONData}),
     })
     .then(response => response.JSON())
     .then(data => console.log("Value ist: ",data))
