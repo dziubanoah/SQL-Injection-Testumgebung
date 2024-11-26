@@ -1,7 +1,7 @@
 const express = require('express');
 const mysql = require("mysql");
 const app = express();
-const PORT = 100;
+const PORT = 1234;
 const fs = require("fs");
 
 var con = mysql.createConnection({
@@ -25,7 +25,7 @@ app.post("/send-json", (req, res) => {
     });
 });
 app.listen(PORT, () => {
-    console.log('Server läuft auf http://localhsot:100')
+    console.log('Server läuft auf http://localhsot:1234')
 })
 
 
