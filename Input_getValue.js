@@ -23,4 +23,5 @@ fetch("http://localhost:4567/send-json", {
     .then(response => response.json())
     .then(data => console.log("Value ist: ",data))
     .catch(error => console.error("Fehler:", error));
+    window.alert(JSON.stringify(JSONData));
 });

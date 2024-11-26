@@ -7,7 +7,8 @@ const fs = require("fs");
 app.use(express.json());
 
 app.post("/send-json", (req, res) => {
-    const JSONData  =req.body;
+    const JSONData = req.body;
+    console.log(JSONData + "ist da")
     fs.writeFile("JSON.txt", JSON.stringify(JSONData, null, 2), (err) => {
         if (err) {
             console.error("Fehler beim beschreiben der Datei", err);
@@ -18,5 +19,5 @@ app.post("/send-json", (req, res) => {
     });
 });
 app.listen(PORT, () => {
-    console.log('Server läuft auf http://localhsot:100')
+    console.log('Server läuft auf http://localhost:100')
 })
