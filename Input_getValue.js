@@ -7,7 +7,6 @@ submit.addEventListener("click", function() {
     console.log(MitarbeiterID.value);
     window.alert("short pause");
 
-    const sendData = async () => {
         const JSONData = {
             passwort: passwort.value,
             ID: MitarbeiterID.value
@@ -24,5 +23,4 @@ fetch("http://localhost:4567/send-json", {
     .then(response => response.json())
     .then(data => console.log("Value ist: ",data))
     .catch(error => console.error("Fehler:", error));
-    }
 });
