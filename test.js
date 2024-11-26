@@ -11,12 +11,12 @@ app.use(express.json());
 app.post("/send-json", (req, res) => {
     const JSONData = req.body;
     console.log(JSONData, "ist da")
-    fs.writeFile("JSON.txt", JSON.stringify(JSONData, null, 2), (err) => {
+    fs.writeFile("write.txt", JSON.stringify(JSONData, null, 2), (err) => {
         if (err) {
             console.error("Fehler beim beschreiben der Datei", err);
             return res.status(500).send("Fehler beim schreiben der Datei. ");
         }
-        console.log("Daten wurden erfolgreich in test.txt geschrieben")
+        console.log("Daten wurden erfolgreich in write.txt geschrieben")
         res.status(200).send("Daten erfolgreich gespeichert")
     });
 });
