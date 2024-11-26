@@ -1,15 +1,8 @@
 const express = require('express');
 const mysql = require("mysql");
 const app = express();
-const PORT = 100;
+const PORT = 4567;
 const fs = require("fs");
-
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    passwort: "",
-    database: "employee_test"
-});
 
 app.use(express.json());
 
@@ -27,21 +20,3 @@ app.post("/send-json", (req, res) => {
 app.listen(PORT, () => {
     console.log('Server läuft auf http://localhsot:100')
 })
-
-
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("connected");
-    let PersonID = "2005";
-    con.query("SELECT Name FROM persons WHERE PersonID=" + PersonID + ";", function(err, result, fields) {
-        if (err) throw err;
-        if (result.length > 0 && result[0].Name == "Noah"){
-            console.log("result equals Noah");
-        }
-        else {
-            console.log("error");
-        };
-    });
-});
-
- 

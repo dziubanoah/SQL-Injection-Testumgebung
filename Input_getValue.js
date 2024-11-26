@@ -12,17 +12,17 @@ submit.addEventListener("click", function() {
             passwort: passwort.value,
             ID: MitarbeiterID.value
         };
-        console.log(JSONData)
-    }
+    
 
-fetch("http://localhost:100", {
+fetch("http://localhost:4567", {
     method: 'POST',
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({JSONData}),
+        body: JSON.stringify(JSONData),
     })
-    .then(response => response.JSON())
+    .then(response => response.json())
     .then(data => console.log("Value ist: ",data))
     .catch(error => console.error("Fehler:", error));
+    }
 });
