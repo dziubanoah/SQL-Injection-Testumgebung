@@ -8,8 +8,8 @@ submit.addEventListener("click", function() {
     window.alert("short pause");
 
         const JSONData = {
-            passwort: passwort.value,
-            ID: MitarbeiterID.value
+            ID: MitarbeiterID.value,
+            passwort: passwort.value
         };
     
 

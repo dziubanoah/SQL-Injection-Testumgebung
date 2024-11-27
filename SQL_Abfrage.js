@@ -4,6 +4,8 @@ const app = express();
 const PORT = 1212;
 const fs = require("fs");
 const cors = require('cors');
+const { exec} = require("child_process");
+//const json_values = require("./write.json");
 app.use(cors());
 
 var con = mysql.createConnection({
@@ -17,33 +19,40 @@ app.use(express.json());
 
 app.post("/send-json", (req, res) => {
     const JSONData = req.body;
-    console.log(JSONData, "ist da")
+    console.log(JSONData, "ist da");
+    let JSONData_ID = JSONData.ID;
+    let JSONData_ID_first_Value = JSONData.ID[0];
+    console.log(JSONData_ID, JSONData_ID_first_Value);
     fs.writeFile("write.json", JSON.stringify(JSONData, null, 2), (err) => {
         if (err) {
             console.error("Fehler beim beschreiben der Datei", err);
             return res.status(500).send("Fehler beim schreiben der Datei. ");
         }
         console.log("Daten wurden erfolgreich in write.txt geschrieben")
+        
         res.status(200).send("Daten erfolgreich gespeichert")
     });
-});
-app.listen(PORT, () => {
-    console.log('Server läuft auf http://localhost:4567')
-})
-
-if () {
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("connected");
-    con.query("SELECT Name FROM persons WHERE PersonID=" + PersonID + ";", function(err, result, fields) {
-        if (err) throw err;
-        if (result.length > 0 && result[0].Name == "Noah"){
-            console.log("result equals Noah");
-        }
-        else {
-            console.log("error");
+        if (JSONData_ID.length >= 1) {
+        con.connect(function(err) {
+            if (err) exec();
+            console.log("connected");
+            PersonID = JSONData.ID;
+            Passwort = JSONData.passwort;
+            console.log("SELECT Name FROM persons WHERE PersonID=" + PersonID + " AND PW=" + Passwort + ";");
+            con.query("SELECT PersonID, PW FROM persons WHERE PersonID=" + PersonID + ";", function(err, result, fields) {
+                if (err) throw err;
+                if (result.length > 0 && result[0].Name == "Noah"){
+                console.log("result equals Noah");
+                }
+                else {
+                    console.log("error");
+                    };
+                });
+            });
+        }else{
+            console.log("Weniger als eine value, zugriff nicht gewährt");
         };
     });
-});
-};
- 
+    app.listen(PORT, () => {
+        console.log('Server läuft auf http://localhost:4567')
+    })
