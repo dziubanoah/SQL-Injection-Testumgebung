@@ -1,8 +1,5 @@
-let result = "Noah"
-let result2 = ""
-
-if(result == "Noah" | 1 == 1 ){
-    console.log("Klappt")
-}else{
-    console.log("klappt nicht")
-}
+const fs = require('fs');
+var config = require('./test.json');
+let PersonID = config.UserLogin[0].ID;
+//console.log(config.UserLogin[0].ID);
+console.log(PersonID);
