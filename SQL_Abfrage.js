@@ -34,15 +34,17 @@ app.post("/send-json", (req, res) => {
     });
         if (JSONData_ID.length >= 1) {
         con.connect(function(err) {
-            if (err) exec();
+            if (err) throw err;
             console.log("connected");
             PersonID = JSONData.ID;
             Passwort = JSONData.passwort;
-            console.log("SELECT Name FROM persons WHERE PersonID=" + PersonID + " AND PW=" + Passwort + ";");
-            con.query("SELECT PersonID, PW FROM persons WHERE PersonID=" + PersonID + ";", function(err, result, fields) {
+            console.log("SELECT PersonID, PW FROM persons WHERE PersonID=" + PersonID + " AND PW=" + Passwort + ";");
+            con.query("SELECT PersonID, PW FROM persons WHERE PersonID=" + PersonID + " AND PW=" + Passwort + ";", function(err, result, fields) {
                 if (err) throw err;
-                if (result.length > 0 && result[0].Name == "Noah"){
+                console.log(result[0].PersonID);
+                if (result.length > 0 && result[0].PersonID == "2005"){
                 console.log("result equals Noah");
+                exec(`start cmd.exe /K "color a && more finish.txt && cd C:/xampp/mysql/bin && mysql.exe -u root"`)
                 }
                 else {
                     console.log("error");

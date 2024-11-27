@@ -1,0 +1,17 @@
+"<
+#####----Du hast es geschafft----#####
+----Die Datenbank und das Backend wurde mit----
+----Hilfe einer SQL Injection gehackt.----
+---#
+----Unter diesem Text befindet sich die---- 
+----SQLKonsole des Admin Bereichs.----
+---#
+----Um Jetzt an Höhere Rechte oder Kundendaten----
+----zu kommen,kann solgendes ausgeführt werden----
+---#
+----SHOW DATABASES; (Zeigt alles Datenbanken)----
+----USE datenbankname; (wechselt in das Datenbank verzeichniss)----
+----SHOW TABLES; (Zeigt alle Tabellen in der Datenbank)----
+----SHOW COLUMNS FROM tablename; (Zeigt alle Spalten in einer Tabelle)----
+----SELECT * FROM tablename; (Zeigt spalten in der Tabelle)----
+>"

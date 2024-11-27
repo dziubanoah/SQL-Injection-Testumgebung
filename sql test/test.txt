@@ -1,0 +1,7 @@
+,,<
+----Die Datenbank und das Backend wurde mit----
+----Hilfe einer SQL Injection gehackt.----
+---#
+----Unter diesem Text befindet sich eine----
+----Ausgabe aller Mitarbeiter inkl Passwort und Personal ID.----
+>,,

@@ -3,5 +3,8 @@ var config = require('./test.json');
 let PersonID = config.UserLogin[0].ID;
 //console.log(config.UserLogin[0].ID);
 console.log(PersonID);
+var PersonIDsearch = PersonID.search;
 
-var PersonIDsearch = PersonID.search
+window.open("https://google.com/");
+
+console.log("node works");
