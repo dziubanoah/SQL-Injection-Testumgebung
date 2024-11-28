@@ -6,6 +6,7 @@
     <title>Enter With sql statement</title>
 </head>
 <body>
+    <h1>Datenbank Admin Bereich</h1>
     <form>
     <label>Mitarbeiter ID eingeben</label>
     <input type="text" required id="MitarbeiterID"><br>
@@ -18,7 +19,16 @@
         <button>Tipp ?</button>
     </div>
     <div id="info_div">
-        <p>info</p>
+        <p>Alle Inputs werden als String interpretiert.
+        Damit werte nicht als String interpretiert werden<br>
+        können " Benutzt werden. Beispiel:
+        Interpretiert wird: "Wert"<br>
+        Interpretiert wird: "" + Wert + ""
+        im 2. Beispliel wird der wert als nicht string angesehen<br>
+        Dabei kann es sich z.B um ein SQL Statement handeln.
+        So kann ein Richtiges SQL statement aussehen: <br>
+        SELECT * FROM persons WHERE PersonID = "Wert" AND PW = "Wert";<br>
+        Dabei steht "Wert" jeweils für das Passwort und die ID</p>
     </div>
     <style>
         form{
@@ -43,17 +53,26 @@
             padding-top: 2%;
         }
         #info_div{
-            background-color: white;
-            font-size: small;
             display: flex;
             justify-content: center;
-            align-items: center;
-            width: 300px;
+            text-align: center;
+            background-color: black;
+            color: greenyellow;
+            visibility:hidden;
+        }
+        h1 {
+            display: flex;
+            justify-content: center;
         }
 
     </style>
     <script>
         document.getElementById("btn1").addEventListener("click", function() {
+            if (document.getElementById("info_div").style.visibility == "hidden") {
+                document.getElementById("info_div").style.visibility = "visible";
+            }else {
+                document.getElementById("info_div").style.visibility = "hidden";
+            }
             
         });
     </script>
