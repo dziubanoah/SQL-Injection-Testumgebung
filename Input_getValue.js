@@ -8,9 +8,10 @@ submit.addEventListener("click", function() {
     window.alert("short pause");
 
         const JSONData = {
-            ID: MitarbeiterID.value,
-            passwort: passwort.value
+            ID: '"' + MitarbeiterID.value + '"',
+            passwort: '"' + passwort.value + '"'
         };
+        console.log(JSONData.toString);
     
 
 fetch("http://localhost:1212/send-json", {

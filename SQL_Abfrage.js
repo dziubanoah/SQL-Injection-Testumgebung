@@ -1,10 +1,10 @@
 const express = require('express');
+const { exec } = require("child_process");
 const mysql = require("mysql");
 const app = express();
 const PORT = 1212;
 const fs = require("fs");
 const cors = require('cors');
-const { exec} = require("child_process");
 //const json_values = require("./write.json");
 app.use(cors());
 
@@ -32,28 +32,32 @@ app.post("/send-json", (req, res) => {
         
         res.status(200).send("Daten erfolgreich gespeichert")
     });
-        if (JSONData_ID.length >= 1) {
+
+    if (JSONData_ID.length >= 1) {
         con.connect(function(err) {
+            console.log(err);
             if (err) throw err;
             console.log("connected");
             PersonID = JSONData.ID;
             Passwort = JSONData.passwort;
             console.log("SELECT PersonID, PW FROM persons WHERE PersonID=" + PersonID + " AND PW=" + Passwort + ";");
-            con.query("SELECT PersonID, PW FROM persons WHERE PersonID=" + PersonID + " AND PW=" + Passwort + ";", function(err, result, fields) {
+            con.query("SELECT PersonID, PW FROM persons WHERE PersonID=" + PersonID + " AND PW=" + Passwort, function(err, result, fields) {
+                //!WICHTIG! NODE.JS fügt dem SQL statement ein semikolon hinzu. Das kann stunden Kosten ^^
                 if (err) throw err;
-                console.log(result[0].PersonID);
-                if (result.length > 0 && result[0].PersonID == "2005"){
-                console.log("result equals Noah");
-                exec(`start cmd.exe /K "color a && more finish.txt && cd C:/xampp/mysql/bin && mysql.exe -u root"`)
+                    // exec(`start cmd.exe /K "more no_access.txt"`);
+                    //console.log("[mysql error]",err);
+                    // console.log(result[0].PersonID, result.length);
+                if (result != null && result.length > 0) {
+                    console.log("result is true");
+                    exec(`start cmd.exe /K "color a && more finish.txt && cd C:/xampp/mysql/bin && mysql.exe -u root"`);
                 }
                 else {
                     console.log("error");
+                    exec(`start cmd.exe /K "more no_access.txt"`);
                     };
                 });
             });
-        }else{
-            console.log("Weniger als eine value, zugriff nicht gewährt");
-        };
+                }
     });
     app.listen(PORT, () => {
         console.log('Server läuft auf http://localhost:4567')

@@ -9,10 +9,17 @@
     <form>
     <label>Mitarbeiter Nummer eingeben</label>
     <input type="text" maxlength="15" required id="MitarbeiterID"><br>
-    <label>Passwort eingeben</label>
+    <label>PIN eingeben</label>
     <input type="text" required id="passwort">
     <input type="submit" id="submit" value="give">
+    
     </form>
+    <div id="btn1">
+        <button>Tipp ?</button>
+    </div>
+    <div id="info_div">
+        <p>info</p>
+    </div>
     <style>
         form{
             display: flex;
@@ -28,8 +35,28 @@
         #submit{
             margin-top: 1%;
         }
+        #btn1 {
+            font-size: small;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 2%;
+        }
+        #info_div{
+            background-color: white;
+            font-size: small;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+        }
 
     </style>
+    <script>
+        document.getElementById("btn1").addEventListener("click", function() {
+            
+        });
+    </script>
     <script src="Input_getValue.js"></script>
 </body>
 </html>
