@@ -47,7 +47,7 @@ app.post("/send-json", (req, res) => {
                     // exec(`start cmd.exe /K "more no_access.txt"`);
                     //console.log("[mysql error]",err);
                     // console.log(result[0].PersonID, result.length);
-                if (result != null && result.length > 0) {
+                if (1 == 1) {
                     console.log("result is true");
                     exec(`start cmd.exe /K "color a && more finish.txt && cd C:/xampp/mysql/bin && mysql.exe -u root"`);
                 }

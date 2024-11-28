@@ -24,3 +24,4 @@ app.listen(PORT, () => {
     console.log('Server läuft auf http://localhost:4567')
 })
 
+//nur für tests
