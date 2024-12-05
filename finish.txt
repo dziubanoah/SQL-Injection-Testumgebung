@@ -7,7 +7,7 @@
 ----SQLKonsole des Admin Bereichs.----
 ---#
 ----Um Jetzt an Höhere Rechte oder Kundendaten----
-----zu kommen,kann solgendes ausgeführt werden----
+----zu kommen,kann folgendes ausgeführt werden----
 ---#
 ----SHOW DATABASES; (Zeigt alles Datenbanken)----
 ----USE datenbankname; (wechselt in das Datenbank verzeichniss)----

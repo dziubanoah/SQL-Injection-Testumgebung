@@ -1,4 +1,4 @@
 {
-  "ID": "\"XYZ\" OR 1=1 OR \"ZYX\"",
-  "passwort": "\"XYZ\" OR 1=1; --  \""
+  "ID": "\"\" OR 1=1 OR \"\"",
+  "passwort": "\"\" OR 1=1; -- \""
 }
