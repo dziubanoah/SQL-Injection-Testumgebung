@@ -1,0 +1,14 @@
+1. Datenbank Konfig
+1.1 mysql konsole öfnen durch 
+cd xampp mysql bin 
+mysql.exe -u root
+Das verzeichnis von mysql ist wichtig für die konsole
+mysql.exe -u root meldet einfach de User an.
+
+1.2 Datenbank erstellen
+die Datenbank kann durch den Befehl CREATE DATABASE ctv_hacking_DB; erstellt werden
+!wichtig! der Name muss 1:1 stimmen
+mit dem Befehl SHOW DATABASE; wird die Datenbank sichtbar.
+
+1.3 Tabellen erstellen
+mit USE ctv_hacking_DB; die Datenbank auswählen
