@@ -12,3 +12,12 @@ mit dem Befehl SHOW DATABASE; wird die Datenbank sichtbar.
 
 1.3 Tabellen erstellen
 mit USE ctv_hacking_DB; die Datenbank auswählen
+CREATE TABLE ctv_hacking_table (Passwort varchar(16), User varchar(16));
+erstellt eine Tabelle mit der Spalte Passwort und User.
+varchar(16) bedeutet, dass maximal 16 zeichen rin kommen.
+
+1.4 Wertee geben:
+INSERT INTO ctv_hacking_table (Passwort, User) VALUES ('admin','123pw12');
+INSERT INTO ctv_hacking_table (Passwort, User) VALUES ('User_BU','DasPw123');
+INSERT INTO ctv_hacking_table (Passwort, User) VALUES ('User_Sales','z4Passw0rd');
+INSERT INTO ctv_hacking_table (Passwort, User) VALUES ('User_IT','t7Dpo8f5c/\');

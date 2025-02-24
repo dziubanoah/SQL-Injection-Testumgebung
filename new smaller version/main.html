@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Abfrage</title>
+</head>
+<body>
+    <div>
+        <form id="Login_form">
+            <h1>Admin Login</h1>
+            <label for="User_Input">Mitarbeiter ID eingeben</label>
+            <input type="text" value="4dm1n" id="User_Input" disabled>
+            <label for="Passwort_Input">Passwort eingeben</label>
+            <input type="text" id="Passwort_Input">
+            <input type="button" id="Anmelden" value="Anmelden">
+            <input type="button" id="Info_Button" value="Info / Hilfe">
+            <div id="Info_Div">
+                <p id="Info_Text">Alle Inputs werden als String interpretiert.
+                    Damit werte nicht als String interpretiert werden<br>
+                    können " Benutzt werden. Beispiel:
+                    Interpretiert wird: "Wert"<br>
+                    Interpretiert wird: "" + Wert + ""
+                    im 2. Beispliel wird der wert als nicht string angesehen<br>
+                    Dabei kann es sich z.B um ein SQL Statement handeln.
+                    So kann ein Richtiges SQL statement aussehen: <br>
+                    SELECT * FROM persons WHERE PersonID = "Wert" AND PW = "Wert";<br>
+                    Dabei steht "Wert" jeweils für das Passwort und die ID
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <style>
+        body, html{
+            width: 100%;
+            height: 100%;
+            overflow:hidden;
+            background-color: black;
+        }
+        h1{
+            color: green;
+        }
+        #Login_form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            color: white;
+        }
+        #User_Input{
+            margin-top: 1%;
+            margin-bottom: 1%;
+            color: green;
+            background-color: white;
+        }
+        #Passwort_Input{
+            color: green;
+        }
+        #Info_Text{
+            text-align: center;
+            color: green;
+        }
+        #Info_Div{
+            visibility: hidden;
+        }
+        #Anmelden{
+            margin-top: 2%;
+            margin-top: 1%;
+        }
+        #Info_Button{
+            margin-top: 2%;
+        }
+    </style>
+    <script src="main.js"></script>
+</body>
+</html>
