@@ -17,7 +17,7 @@ erstellt eine Tabelle mit der Spalte Passwort und User.
 varchar(16) bedeutet, dass maximal 16 zeichen rin kommen.
 
 1.4 Wertee geben:
-INSERT INTO ctv_hacking_table (Passwort, User) VALUES ('admin','123pw12');
-INSERT INTO ctv_hacking_table (Passwort, User) VALUES ('User_BU','DasPw123');
-INSERT INTO ctv_hacking_table (Passwort, User) VALUES ('User_Sales','z4Passw0rd');
-INSERT INTO ctv_hacking_table (Passwort, User) VALUES ('User_IT','t7Dpo8f5c/\');
+INSERT INTO ctv_hacking_table (User, Passwort) VALUES ('admin','123pw12');
+INSERT INTO ctv_hacking_table (User, Passwort) VALUES ('User_BU','DasPw123');
+INSERT INTO ctv_hacking_table (User, Passwort) VALUES ('User_Sales','z4Passw0rd');
+INSERT INTO ctv_hacking_table (User, Passwort) VALUES ('User_IT','t7Dpo8f5c/\');

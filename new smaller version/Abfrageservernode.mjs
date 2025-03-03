@@ -42,7 +42,10 @@ function requestlistener(request, response) {
             console.log("Verbindung hergestellt.")
         });
 
-        //ctv_DB.query("")
+        ctv_DB.query("SELECT User FROM ctv_hacking_table WHERE Passwort='" + body + "';", function(error, result) {
+            if (error) throw error;
+            console.log(result);
+        })
     }
 }
 
