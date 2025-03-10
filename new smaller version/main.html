@@ -2,30 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQL Abfrage</title>
 </head>
 <body>
     <div>
         <form id="Login_form">
             <h1>Admin Login</h1>
-            <label for="User_Input">Mitarbeiter ID eingeben</label>
-            <input type="text" value="4dm1n" id="User_Input" disabled>
+            <label for="User_Input">Datenbankuser eingeben</label>
+            <input type="text" value="admin" id="User_Input" disabled>
             <label for="Passwort_Input">Passwort eingeben</label>
             <input type="text" id="Passwort_Input">
             <input type="button" id="Anmelden" value="Anmelden">
             <input type="button" id="Info_Button" value="Info / Hilfe">
             <div id="Info_Div">
-                <p id="Info_Text">Alle Inputs werden als String interpretiert.
-                    Damit werte nicht als String interpretiert werden<br>
-                    können " Benutzt werden. Beispiel:
-                    Interpretiert wird: "Wert"<br>
-                    Interpretiert wird: "" + Wert + ""
-                    im 2. Beispliel wird der wert als nicht string angesehen<br>
-                    Dabei kann es sich z.B um ein SQL Statement handeln.
-                    So kann ein Richtiges SQL statement aussehen: <br>
-                    SELECT * FROM persons WHERE PersonID = "Wert" AND PW = "Wert";<br>
-                    Dabei steht "Wert" jeweils für das Passwort und die ID
+                <p id="Info_Text">
+                    Um eine SQL Injection durchzuführen muss als erstes <br>
+                    verstanden werden, wie die SQL Syntax aussehen könnte<br>
+                    bzw. wie ein Server die Anfrage bearbeitet.<br>
+                    Bei unsicheren Systemen wird häufig eine Wert direkt<br>
+                    an die Datenbank geschickt statt einen eingegebnen Wert zu<br>
+                    vergleichen. Das führt dazu, dass die Datenbank auch SQL<br>
+                    Syntax ausführen kann, weil der Wert ohne hindernisse in<br>
+                    eine SQL Abfrage eingefügt wird. Um sich das besser vorzustellen<br>
+                    kann man als Beispiel das Paswort feld als Wert:<br>
+                    <a class="Passworteingabe_im_text">Passwworteingabe = Deine Eingabe (z.B 123456) </a> sehen.<br>
+                    Bei dem unsicheren system wird der wert so an die Datenbang geschickt:<br>
+                    SELECT * FROM datenbank WHERE <a class="Passworteingabe_im_text">Passworteingabe='123456'</a>;<br>
+                    Der Wert ist in Anführungszeichen, damit es als String (Zeichenkette) interpretiert wird.<br>
                 </p>
             </div>
         </form>
@@ -71,6 +74,9 @@
         }
         #Info_Button{
             margin-top: 2%;
+        }
+        .Passworteingabe_im_text{
+            color: red;
         }
     </style>
     <script src="main.js"></script>

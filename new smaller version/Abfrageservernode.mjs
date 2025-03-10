@@ -1,13 +1,9 @@
 import http from "http";
-import cors from "cors";
-import mysql from "mysql"
+import mysql from "mysql";
+import open from "open";
 let body = '';
 
 function requestlistener(request, response) {
-    response.setHeader('Access-Control-Allow-Origin', '*');
-    response.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    response.setHeader('Access-Control-Allow-Headers', 'Content-Type'); 
-
 
     if (request.method == "OPTIONS") {
         console.log("POST bekommen");
@@ -42,9 +38,13 @@ function requestlistener(request, response) {
             console.log("Verbindung hergestellt.")
         });
 
-        ctv_DB.query("SELECT User FROM ctv_hacking_table WHERE Passwort='" + body + "';", function(error, result) {
+        ctv_DB.query(`SELECT * FROM ctv_hacking_table WHERE User='admin' AND Passwort='${body}';`, function(error, result) {
+            body = '';
             if (error) throw error;
-            console.log(result);
+            console.log(result.length);
+            if (result.length > 0) {
+                open("http://localhost/phpmyadmin/");
+            }
         })
     }
 }
