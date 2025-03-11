@@ -41,6 +41,7 @@ function requestlistener(request, response) {
         ctv_DB.query(`SELECT * FROM ctv_hacking_table WHERE User='admin' AND Passwort='${body}';`, function(error, result) {
             body = '';
             if (error) throw error;
+            console.log(result)
             console.log(result.length);
             if (result.length > 0) {
                 open("http://localhost/phpmyadmin/");

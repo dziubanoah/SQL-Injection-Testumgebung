@@ -1,0 +1,29 @@
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+header {
+    background-color: black;
+    position: relative;
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom-right-radius: 115%;
+    border-bottom-left-radius: 115%;
+}
+#Haupt_Container {
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: #282828;
+display: flex;
+justify-content: center;
+align-items: top;
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1 {
+    color: white;
+}
