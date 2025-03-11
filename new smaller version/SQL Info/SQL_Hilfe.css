@@ -27,3 +27,9 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
 h1 {
     color: white;
 }
+#Text_Div_1 {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: red;
+}
