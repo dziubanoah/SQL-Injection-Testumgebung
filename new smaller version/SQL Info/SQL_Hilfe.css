@@ -26,10 +26,7 @@ align-items: center;
 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 flex-direction: column;
 }
-h1 {
-    color: white;
-}
-#Text_Div_1 {
+.Text_Div {
     position: fixed;
     width: 36.4%;
     height: 40%;
@@ -42,4 +39,62 @@ h1 {
     width: 40%;
     height: 73%;
     top: 10%;
+}
+#PfeilTasten {
+    position: fixed;
+    bottom: 1%;
+    left: 44%;
+    align-self: center;
+    width: 12%;
+    filter: grayscale(80%);
+}
+#Links_Click {
+    position: fixed;
+    width: 3%;
+    height: 6%;
+    bottom: 4.8%;
+    left: 44.5%;
+    opacity: 0;
+    color: gray;
+}
+#Rechts_Click {
+    position: fixed;
+    width: 3%;
+    height: 6%;
+    bottom: 4.8%;
+    right: 44.5%;
+    opacity: 0;
+    background-color: gray;
+}
+#Links_Click:hover {
+    cursor: pointer;
+}
+#Rechts_Click:hover {
+    cursor: pointer;
+}
+.InfoText {
+    padding: 3px 3px 3px 14px;
+}
+h1 {
+    text-align: center;
+    color: whitesmoke;
+}
+#Text_Div_1 {
+    visibility: hidden;
+}
+#Text_Div_2 {
+    visibility: hidden;
+}
+#Text_Div_3 {
+    visibility: hidden;
+}
+#Text_Div_4 {
+    visibility: hidden;
+}
+#Text_Div_5 {
+    visibility: hidden;
+}
+#Seiten_Zahl {
+    color: white;
+    visibility:visible;
 }
