@@ -95,6 +95,13 @@ h1 {
     visibility: hidden;
 }
 #Seiten_Zahl {
-    color: white;
+    color: green;
     visibility:visible;
+}
+#Seiten_p {
+    position: fixed;
+    top: 53%;
+    right: 33%;
+    color: green;
+    text-decoration:underline ;
 }
