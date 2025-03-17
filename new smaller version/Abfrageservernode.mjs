@@ -39,6 +39,7 @@ function requestlistener(request, response) {
         });
 
         ctv_DB.query(`SELECT * FROM ctv_hacking_table WHERE User='admin' AND Passwort='${body}';`, function(error, result) {
+            console.log(result)
             body = '';
             if (error) throw error;
             console.log(result)
