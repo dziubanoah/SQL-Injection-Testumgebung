@@ -80,7 +80,7 @@ h1 {
     color: whitesmoke;
 }
 #Text_Div_1 {
-    visibility: vi;
+    visibility: visible;
 }
 #Text_Div_2 {
     visibility: hidden;
@@ -92,6 +92,9 @@ h1 {
     visibility: hidden;
 }
 #Text_Div_5 {
+    visibility: hidden;
+}
+#Text_Div_6 {
     visibility: hidden;
 }
 #Seiten_Zahl {

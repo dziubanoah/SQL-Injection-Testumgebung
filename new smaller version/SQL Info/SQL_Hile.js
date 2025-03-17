@@ -7,6 +7,7 @@ let Text_Div_2 = document.getElementById("Text_Div_2");
 let Text_Div_3 = document.getElementById("Text_Div_3");
 let Text_Div_4 = document.getElementById("Text_Div_4");
 let Text_Div_5 = document.getElementById("Text_Div_5");
+let Text_Div_6 = document.getElementById("Text_Div_6");
 let InfoText = document.getElementsByClassName("InfoText")
 let Aktuelle_Seitenzahl = parseInt(Seiten_Zahl.innerHTML);
 let InfoText_1 =  document.getElementById("InfoText_1");
@@ -14,6 +15,7 @@ let InfoText_2 = document.getElementById("InfoText_2");
 let InfoText_3 = document.getElementById("InfoText_3");
 let InfoText_4 = document.getElementById("InfoText_4");
 let InfoText_5 = document.getElementById("InfoText_5");
+let InfoText_6 = document.getElementById("InfoText_6");
 
 
 Links_Click.addEventListener("click", function() {
@@ -38,6 +40,7 @@ function Load_Container () {
     Text_Div_1.style.visibility = "hidden";
     Text_Div_4.style.visibility = "hidden";
     Text_Div_5.style.visibility = "hidden";
+    Text_Div_6.style.visibility = "hidden";
 
 switch(Aktuelle_Seitenzahl) {
     case 1: Text_Div_1.style.visibility = "visible"; 
@@ -54,6 +57,9 @@ switch(Aktuelle_Seitenzahl) {
     break;
     case 5: Text_Div_5.style.visibility = "visible";
     start_Animation(InfoText_5);
+    break;
+    case 6: Text_Div_6.style.visibility = "visible";
+    start_Animation(InfoText_6);
     break;
     default: break
     }

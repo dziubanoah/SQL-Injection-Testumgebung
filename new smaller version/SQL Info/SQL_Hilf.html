@@ -49,13 +49,32 @@
         <div class="Text_Div" id="Text_Div_4">
             <h1>Wie interpretiert SQL ein Passwort ?</h1>
                 <p class="InfoText" id="InfoText_4">
-                    sdas ist DIV Nr. 4
+                    Eine Datenbank würd in unsicheren Backend systemen das Passwort <br><br>
+                    idr. als unverschlüsselten String (Zeichenkette) Interpretieren. <br><br>
+                    Dadurch das OR aber SQL syntax ist darf es nicht im String stehen. <br><br>
+                    um ein String als verarbeitung zu umgehen wird " benutzt. <br><br>
+                    bsp. Pw" OR 1=1. Was die Datenbank jetzt versteht: "Pw" OR 1=1 <br><br>
+                    Das " schließt den string und erlaubt so SQL syntax.
                 </p>
         </div>
         <div class="Text_Div" id="Text_Div_5">
-            <h1>Was ist eine SQL Injection?</h1>
+            <h1>SQL code auskommentieren</h1>
                 <p class="InfoText" id="InfoText_5">
-                    sdas ist DIV Nr. 5
+                    Beim auskommentieren wird alles hinter einem -- für die <br><br>
+                    Datenbank unsichtbar. so kann z.B alles hinter einem OR 1=1 <br><br>
+                    für die Datenbank unsichtbar gemacht werde. Das ist wichtig, um <br><br>
+                    eventuelle weitere " ungültig zu machen, oder um weitere syntax <br><br>
+                    unsichtbar zu machen. z.B währe so eine eingabe: Pw" OR 1=1 -- <br>
+                    was die datenbank sieht: "Pw" OR 1=1 -- weiterer code / semikolon
+                </p>
+        </div>
+        <div class="Text_Div" id="Text_Div_6">
+            <h1>Weitere Infos</h1>
+                <p class="InfoText" id="InfoText_6">
+                    Hinter Jeder SQL Abfrage muss ein Semikolon, damit die Abfrage <br><br>
+                    korrekt abgeschlossen wird. Beim auskommentieren wird dies <br><br>
+                    entfernt, desswegen muss es manuell hinzugefügt werden z.B: <br><br>
+                    Pw" OR 1=1; -- Was die Datenbank sieht: "Pw" OR 1=1; -- weiteres; <br><br> 
                 </p>
         </div>
         <img src="Pfeiltastergb.png" id="PfeilTasten">
