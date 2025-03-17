@@ -80,7 +80,7 @@ h1 {
     color: whitesmoke;
 }
 #Text_Div_1 {
-    visibility: hidden;
+    visibility: visible;
 }
 #Text_Div_2 {
     visibility: hidden;
@@ -105,3 +105,23 @@ h1 {
     color: green;
     text-decoration:underline ;
 }
+.InfoText{
+    color: green; /* Neon-Grün für den Text */
+    font-family: "Courier New", monospace; /* Monospaced-Schriftart */
+    font-size: 18px;
+    line-height: 1.6;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: none;
+    width: 0;
+    -webkit-animation: typing 5s steps(150) 1s 1 normal both; 
+  }
+  
+  @-webkit-keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
