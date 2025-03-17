@@ -8,6 +8,7 @@ let Text_Div_3 = document.getElementById("Text_Div_3");
 let Text_Div_4 = document.getElementById("Text_Div_4");
 let Text_Div_5 = document.getElementById("Text_Div_5");
 let Text_Div_6 = document.getElementById("Text_Div_6");
+let Text_Div_7 = document.getElementById("Text_Div_7");
 let InfoText = document.getElementsByClassName("InfoText")
 let Aktuelle_Seitenzahl = parseInt(Seiten_Zahl.innerHTML);
 let InfoText_1 =  document.getElementById("InfoText_1");
@@ -16,7 +17,12 @@ let InfoText_3 = document.getElementById("InfoText_3");
 let InfoText_4 = document.getElementById("InfoText_4");
 let InfoText_5 = document.getElementById("InfoText_5");
 let InfoText_6 = document.getElementById("InfoText_6");
-
+let InfoText_7 = document.getElementById("InfoText_7");
+let Schnipsel_1 = document.getElementById("Schnippsel_1");
+let Schnipsel_2 = document.getElementById("Schnippsel_2");
+let Schnipsel_3 = document.getElementById("Schnippsel_3");
+let Schnipsel_4 = document.getElementById("Schnippsel_4");
+let CheckSchnipsel = document.getElementById("CheckSchnippsel");
 
 Links_Click.addEventListener("click", function() {
     Aktuelle_Seitenzahl = parseInt(Seiten_Zahl.innerHTML);
@@ -41,6 +47,7 @@ function Load_Container () {
     Text_Div_4.style.visibility = "hidden";
     Text_Div_5.style.visibility = "hidden";
     Text_Div_6.style.visibility = "hidden";
+    Text_Div_7.style.visibility = "hidden";
 
 switch(Aktuelle_Seitenzahl) {
     case 1: Text_Div_1.style.visibility = "visible"; 
@@ -60,6 +67,9 @@ switch(Aktuelle_Seitenzahl) {
     break;
     case 6: Text_Div_6.style.visibility = "visible";
     start_Animation(InfoText_6);
+    break;
+    case 7: Text_Div_7.style.visibility = "visible";
+    start_Animation(InfoText_7);
     break;
     default: break
     }
@@ -82,3 +92,22 @@ function start_Animation(element) {
 Aufpassen. Die Animation NIE auf eine klasse anwenden, wenn es wiederholt werden soll. Die klasse wird ja logischerweise auf mehrere Obejkte gleichzeitig angewand....
 dh. Beim wiederholen wird imme alles wiederholt oder es funktioniert erst garnicht. IMMER JEDEM TEXT EINE KLASSE GEBEN.
 */ 
+
+//code für die Code Schnipsel:
+
+CheckSchnipsel.addEventListener("click", function() {
+    if (Schnipsel_1.value == "2" && Schnipsel_2.value == "1" && Schnipsel_3.value == "4" && Schnipsel_4.value == "3") {
+        window.alert("Das ist Korrekt. Jetzt kannst du es im Admin Bereich Probieren.");
+        Schnipsel_1.value = "0";
+        Schnipsel_2.value = "0";
+        Schnipsel_3.value = "0";
+        Schnipsel_4.value = "0";
+    }
+    else {
+        window.alert("Das ist leider falsch.");
+        Schnipsel_1.value = "0";
+        Schnipsel_2.value = "0";
+        Schnipsel_3.value = "0";
+        Schnipsel_4.value = "0";
+    }
+});

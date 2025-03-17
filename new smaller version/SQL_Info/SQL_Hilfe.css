@@ -73,7 +73,7 @@ flex-direction: column;
     cursor: pointer;
 }
 .InfoText {
-    padding: 3px 3px 3px 14px;
+    padding: 0px 0px 3px 3px;
 }
 h1 {
     text-align: center;
@@ -95,6 +95,9 @@ h1 {
     visibility: hidden;
 }
 #Text_Div_6 {
+    visibility: hidden;
+}
+#Text_Div_7 {
     visibility: hidden;
 }
 #Seiten_Zahl {
@@ -128,3 +131,12 @@ h1 {
       width: 100%;
     }
   }
+  .Schnippsel {
+    font-size: 20px;
+    color: green;
+    background-color: black;
+    border-color: green;
+  }
+#InfoText_7 {
+    font-size: 20px;
+}

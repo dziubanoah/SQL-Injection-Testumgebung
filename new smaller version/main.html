@@ -15,22 +15,6 @@
             <input type="button" id="Anmelden" value="Anmelden">
             <input type="button" id="Info_Button" value="Info / Hilfe">
             <div id="Info_Div">
-                <p id="Info_Text">
-                    Um eine SQL Injection durchzuführen muss als erstes <br>
-                    verstanden werden, wie die SQL Syntax aussehen könnte<br>
-                    bzw. wie ein Server die Anfrage bearbeitet.<br>
-                    Bei unsicheren Systemen wird häufig eine Wert direkt<br>
-                    an die Datenbank geschickt statt einen eingegebnen Wert zu<br>
-                    vergleichen. Das führt dazu, dass die Datenbank auch SQL<br>
-                    Syntax ausführen kann, weil der Wert ohne hindernisse in<br>
-                    eine SQL Abfrage eingefügt wird. Um sich das besser vorzustellen<br>
-                    kann man als Beispiel das Paswort feld als Wert:<br>
-                    <a class="Passworteingabe_im_text">Passwworteingabe = Deine Eingabe (z.B 123456) </a> sehen.<br>
-                    Bei dem unsicheren system wird der wert so an die Datenbang geschickt:<br>
-                    SELECT * FROM datenbank WHERE <a class="Passworteingabe_im_text">Passworteingabe='123456'</a>;<br>
-                    Der Wert ist in Anführungszeichen, damit es als String (Zeichenkette) interpretiert wird.<br>
-                    bei Weiteren Infos zur Syntax <a href="SQL_info.html">Hier</a> klicken
-                </p>
             </div>
         </form>
     </div>
@@ -41,9 +25,11 @@
             height: 100%;
             overflow:hidden;
             background-color: black;
+            font-size: 32px;
         }
         h1{
             color: green;
+            font-size: 80px;
         }
         #Login_form{
             display: flex;
@@ -58,9 +44,11 @@
             margin-bottom: 1%;
             color: green;
             background-color: white;
+            font-size: 32px;
         }
         #Passwort_Input{
             color: green;
+            font-size: 32px;
         }
         #Info_Text{
             text-align: center;
@@ -72,9 +60,11 @@
         #Anmelden{
             margin-top: 2%;
             margin-top: 1%;
+            font-size: 32px;
         }
         #Info_Button{
             margin-top: 2%;
+            font-size: 32px;
         }
         .Passworteingabe_im_text{
             color: red;

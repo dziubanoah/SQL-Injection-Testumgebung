@@ -6,12 +6,7 @@ let Anmelden = document.getElementById("Anmelden");
 
 
 Info_Button.addEventListener("click", function() {
-    if(Info_Div.style.visibility == "hidden") {
-        Info_Div.style.visibility = "visible"
-    }
-    else {
-        Info_Div.style.visibility = "hidden"
-    }
+    window.open("SQL_Info/SQL_Hilf.html");
 });
 
 Anmelden.addEventListener("click", function() {
