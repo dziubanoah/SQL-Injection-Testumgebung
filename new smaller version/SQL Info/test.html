@@ -1,0 +1,37 @@
+<button>Click me</button>
+
+<style>
+@-webkit-keyframes bg {
+    from, to { background: yellow; }
+    33% { background: green; }
+    66% { background: blue; }
+}
+
+button {
+    font-size: 200%;
+    padding: .3em .5em;
+    background: yellow;
+    -webkit-animation: bg 5s infinite;
+    animation: bg 5s infinite;  /* Auch für moderne Browser */
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$('button').click(function(){
+    var me = this;
+    
+    // Stoppe die Animation
+    me.style.animation = 'none';
+
+    // Erzwungener Reflow, damit der Browser den Stil verarbeitet
+    void me.offsetWidth;  // Erzwingt den Reflow
+
+    // Setze die Animation zurück nach einer kurzen Verzögerung
+    setTimeout(function() {
+        me.style.animation = '';  // Entfernt die Animation-Eigenschaft
+        me.style.animation = 'bg 5s infinite'; // Setzt die Animation zurück
+    }, 10);  // Kurze Verzögerung (10 ms)
+});
+</script>
