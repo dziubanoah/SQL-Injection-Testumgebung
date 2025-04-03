@@ -1,7 +1,5 @@
-let User_Input = document.getElementById("User_Input");
 let Passwort_Input = document.getElementById("Passwort_Input");
 let Info_Button = document.getElementById("Info_Button");
-let Info_Div = document.getElementById("Info_Div");
 let Anmelden = document.getElementById("Anmelden");
 
 
