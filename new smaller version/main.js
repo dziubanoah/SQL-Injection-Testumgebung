@@ -1,7 +1,11 @@
 let Passwort_Input = document.getElementById("Passwort_Input");
 let Info_Button = document.getElementById("Info_Button");
 let Anmelden = document.getElementById("Anmelden");
+let Klartext_Passwort = document.getElementById("Klartext_Passwort");
 
+Passwort_Input.addEventListener('input', function() {
+    Klartext_Passwort.innerHTML = Passwort_Input.value;
+});
 
 Info_Button.addEventListener("click", function() {
     window.open("SQL_Info/SQL_Hilf.html");
