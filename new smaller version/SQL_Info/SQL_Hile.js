@@ -23,6 +23,7 @@ let Schnipsel_2 = document.getElementById("Schnippsel_2");
 let Schnipsel_3 = document.getElementById("Schnippsel_3");
 let Schnipsel_4 = document.getElementById("Schnippsel_4");
 let CheckSchnipsel = document.getElementById("CheckSchnippsel");
+let Korrekter_Code = document.getElementById("Korrekter_Code");
 
 Links_Click.addEventListener("click", function() {
     Aktuelle_Seitenzahl = parseInt(Seiten_Zahl.innerHTML);
@@ -102,6 +103,7 @@ CheckSchnipsel.addEventListener("click", function() {
         Schnipsel_2.value = "0";
         Schnipsel_3.value = "0";
         Schnipsel_4.value = "0";
+        Korrekter_Code.innerHTML = "Die korrekte Syntax ist: Pw' OR 1=1; -- "
     }
     else {
         window.alert("Das ist leider falsch.");
