@@ -12,14 +12,17 @@
             <label for="User_Input">Datenbankuser eingeben</label>
             <input type="text" value="admin" id="User_Input" disabled>
             <label for="Passwort_Input">Passwort eingeben</label>
-            <input type="text" id="Passwort_Input">
+            <input type="password" id="Passwort_Input">
             <input type="button" id="Anmelden" value="Anmelden">
             <input type="button" id="Info_Button" value="Info / Hilfe">
+            <br><br><br>
+            <p id="Klartext_Passwort"></p>
             <div id="Info_Div">
             </div>
         </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.11.0/sha256.min.js"></script>
     <script src="main.js"></script>
+    <script src="test.js"></script>
 </body>
 </html>
