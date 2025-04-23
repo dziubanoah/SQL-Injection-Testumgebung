@@ -85,3 +85,7 @@
     border: 1px dashed #33ff33;
     margin-top: 0.5rem;
   }
+  #Klartext_Passwort{
+    color: white;
+    cursor: pointer;
+  }
