@@ -38,14 +38,20 @@ function requestlistener(request, response) {
             console.log("Verbindung hergestellt.")
         });
 
-        ctv_DB.query(`SELECT * FROM ctv_hacking_table WHERE User='admin' AND Passwort='${body}';`, function(error, result) {
+        ctv_DB.query(`SELECT Passwort FROM ctv_hacking_table WHERE User='admin';`, function(error, result) {
             console.log(result)
-            body = '';
             if (error) throw error;
-            console.log(result)
-            console.log(result.length);
-            if (result.length > 0) {
-                open("http://localhost/phpmyadmin/");
+            let passwort = result[0].Passwort;
+            console.log("Aus dem front-end kenne ich: " + body)
+            console.log("Die Datenbank sagt: " + passwort)
+            if (passwort === body) {
+                console.log("Jaa Das passwort ist korrekt !")
+                body = ''
+            }
+            else {
+                console.log("Deine eingebe =! das passwort aus der DB")
+                console.log("Deine eingabe: " + body)
+                body = ''
             }
         })
     }
