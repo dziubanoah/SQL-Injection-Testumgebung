@@ -14,7 +14,7 @@ Info_Button.addEventListener("click", function() { //Öffnet die Hilfe Seite.
 Anmelden.addEventListener("click", function() { //schickt den Wert aus dem Input Feld an den Node Server.
     let Passwort_Value = Passwort_Input.value;
     window.alert(Passwort_Value)
-    fetch("http://localhost:8080", {
+    fetch("http://localhost:8082", {
         method: "POST",
         headers: {
             "Content-Type": "text/plain" 
