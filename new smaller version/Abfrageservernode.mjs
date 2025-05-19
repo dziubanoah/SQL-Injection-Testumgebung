@@ -1,23 +1,25 @@
-import http from "http";
+import http, { request } from "http";
 import mysql from "mysql";
 import open from "open";
+let port = 8082;
 let body = '';
 
-function requestlistener(request, response) {
+http.createServer(function(request, response) {
+    console.log("Server läuft auf " + port)
 
-    if (request.method == "OPTIONS") {
-        console.log("POST bekommen");
+    if (request.method == "OPTIONS") { //Vor der POST Anfrage kommt idr. eine Options Anfrage.
         console.log(request.method + " bekommen");
-        response.writeHead(200);
+        response.writeHead(200); //bedeutet, die Anfrage & Antwort war korrekt / ohne Fehler.
         response.end();
     }
     else if (request.method == "POST") {
         console.log(request.method + " bekommen");
+        response.writeHead(200);
 
         request.on("data", chunk => {
-            body += chunk // Daten werden zum Body hinzugefügt.
-            console.log(body) 
-            sql_Abfrage();
+            body += chunk // Daten werden an "body" gehangen.
+            console.log(body);
+            sql_Abfrage(); //startet die funktion, damit die DB Verbindung bei einem POST hergestellt wird.
         });
     }
 
@@ -26,7 +28,7 @@ function requestlistener(request, response) {
     })
 
     function sql_Abfrage () {
-        let ctv_DB = mysql.createConnection({
+        let ctv_DB = mysql.createConnection({ //Verbindungsconfig
             host: "localhost",
             user: "root",
             password: "",
@@ -35,22 +37,18 @@ function requestlistener(request, response) {
 
         ctv_DB.connect(function(err) {
             if (err) throw err;
-            console.log("Verbindung hergestellt.")
+            console.log("Verbindung hergestellt.");
         });
 
         ctv_DB.query(`SELECT * FROM ctv_hacking_table WHERE User='admin' AND Passwort='${body}';`, function(error, result) {
             console.log(result)
-            body = '';
+            body = ''; //setzt body auf nichts, falls 2 Anfragen kommen, bleibt der wert in body nicht stehen.
             if (error) throw error;
-            console.log(result)
-            console.log(result.length);
-            if (result.length > 0) {
+            console.log(result + "ist das result.")
+            console.log(result.length + "ist die result länge.");
+            if (result.length > 0) { //die ANmeldung ist true, wenn mindestens ein Wert zurückkommt.
                 open("http://localhost/phpmyadmin/");
             }
         })
     }
-}
-
-const Abfrage_Server = http.createServer(requestlistener);
-
-Abfrage_Server.listen(8080);
+}).listen(port);
