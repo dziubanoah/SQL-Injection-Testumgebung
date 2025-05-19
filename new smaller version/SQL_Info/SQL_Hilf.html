@@ -9,79 +9,80 @@
 <body>
     <div id="Haupt_Container">
         <header>
-            <h1>Wie Sieht die SQL Syntax aus ?</h1>
+            <h1>Erste Hilfe für SQL Injection</h1>
         </header>
-        <img src="Monitor.png" id="image_Monitor">
-        <div class="Text_Div" id="Text_Div_1">
-            <h1>Was ist SQL ?</h1>
-                <p class="InfoText" id="InfoText_1">
-                    SQL ermöglicht das Abfragen von Daten in Datenbanken. <br> <br>
-                    Verwendet zur Überprüfung von Passwörtern und Nutzerdaten. <br> <br>
-                    Sichert den Abgleich von eingegebenen und gespeicherten Daten. <br> <br>
-                    Ermöglicht den Zugriff nur bei korrekten Eingaben.
+<img src="Monitor.png" id="image_Monitor">
+<div class="Text_Div" id="Text_Div_0">
+    <h1 style="color: red;">ERROR 404</h1>
+    <h1 style="color: red;">ERROR DIESE SEITE EXISTIERT NICHT</h1>
+    <h2 style="color: red;">BITTE WENDEN SIE SICH AN IHREN ADMINISTRATOR</h2>
+    
+</div>
+<div class="Text_Div" id="Text_Div_1">
+    <h1>Was ist SQL ?</h1>
+    <p class="InfoText" id="InfoText_1">
+        - SQL ermöglicht das Abfragen von Daten in Datenbanken. <br><br>
+        - Wird zur Überprüfung von eingegebenen Daten genutzt. <br><br>
+        - Vergleicht eingegebene und gespeicherte Daten. <br><br>
+        - Ermöglicht Zugriff bei korrekten Daten.
+    </p>
+</div>
 
-                </p>
-                <br>
-                <br>
-                <br>
-                <br>
-        </div>
-        <div class="Text_Div" id="Text_Div_2">
-            <h1>Was ist eine SQL Injection?</h1>
-            <p class="InfoText" id="InfoText_2">
-                Eine **SQL-Injection** tritt auf, wenn das Backend unsicher ist. <br> <br>
-                Alle SQL-Anfragen werden direkt an die Datenbank weitergeleitet. <br> <br>
-                Angreifer können schadhafte SQL-Befehle in Eingabefelder einfügen. <br> <br>
-                Dadurch kann unbefugter Zugriff auf Daten erfolgen.
-            </p>
-            
-        </div>
-        <div class="Text_Div" id="Text_Div_3">
-            <h1>OR Statement in SQL</h1>
-                <p class="InfoText" id="InfoText_3">
-                    dadurch, dass SQL Syntax in die Datenbank kommt, ist es möglich <br><br>
-                    statt eines Passworts der Datenbank eine Option zu geben. <br><br>
-                    Mit einem OR statement in SQL kann man einen eingegebenen wert <br><br>
-                    eine Alternative geben. z.B passwort OR 1=1. Hier wird SQL<br><br>
-                    mit OR 1=1 eine Alternative zum eigentlichen passwort gegeben.<br><br>
-                </p>
-        </div>
-        <div class="Text_Div" id="Text_Div_4">
-            <h1>Wie interpretiert SQL ein Passwort ?</h1>
-                <p class="InfoText" id="InfoText_4">
-                    Eine Datenbank würd in unsicheren Backend systemen das Passwort <br><br>
-                    idr. als unverschlüsselten String (Zeichenkette) Interpretieren. <br><br>
-                    Dadurch das OR aber SQL syntax ist darf es nicht im String stehen. <br><br>
-                    um ein String als verarbeitung zu umgehen wird ' benutzt. <br><br>
-                    bsp. Pw' OR 1=1. Was die Datenbank jetzt versteht: 'Pw' OR 1=1 <br><br>
-                    Das " schließt den string und erlaubt so SQL syntax.
-                </p>
-        </div>
-        <div class="Text_Div" id="Text_Div_5">
-            <h1>SQL code auskommentieren</h1>
-                <p class="InfoText" id="InfoText_5">
-                    Beim auskommentieren wird alles hinter einem -- für die <br><br>
-                    Datenbank unsichtbar. so kann z.B alles hinter einem OR 1=1 <br><br>
-                    für die Datenbank unsichtbar gemacht werde. Das ist wichtig, um <br><br>
-                    eventuelle weitere ' ungültig zu machen, oder um weitere syntax <br><br>
-                    unsichtbar zu machen. z.B währe so eine eingabe: Pw' OR 1=1 -- <br>
-                    was die datenbank sieht: 'Pw' OR 1=1 -- weiterer code / semikolon
-                </p>
-        </div>
-        <div class="Text_Div" id="Text_Div_6">
-            <h1>Weitere Infos</h1>
-                <p class="InfoText" id="InfoText_6">
-                    Hinter Jeder SQL Abfrage muss ein Semikolon, damit die Abfrage <br><br>
-                    korrekt abgeschlossen wird. Beim auskommentieren wird dies <br><br>
-                    entfernt, desswegen muss es manuell hinzugefügt werden z.B: <br><br>
-                    Pw' OR 1=1; -- Was die Datenbank sieht: 'Pw' OR 1=1; -- weiteres; <br><br> 
-                    !WICHTIG! vor und hinter dem -- muss jeweils 1 Leerzeichen sein.
-                </p>
-        </div>
+<div class="Text_Div" id="Text_Div_2">
+    <h1>Was ist eine SQL Injection?</h1>
+    <p class="InfoText" id="InfoText_2">
+        - Tritt bei unsicherem Backendsystemen auf. <br><br>
+        - SQL-Anfragen werden direkt weitergegeben. <br><br>
+        - Angreifer fügen SQL Befehle ein. <br><br>
+        - Ermöglicht unbefugten Zugriff.
+    </p>
+</div>
+
+<div class="Text_Div" id="Text_Div_3">
+    <h1>OR Statement in SQL</h1>
+    <p class="InfoText" id="InfoText_3">
+        - SQL kann Alternativen für Eingabewerte nutzen. <br><br>
+        - OR fügt eine zusätzliche Bedingung hinzu. <br><br>
+        - Beispiel: Passwort <a style="color: green;">OR 1=1</a> gibt eine gültige Eingabe. <br><br>
+        - Kann unbefugten Zugriff ermöglichen.
+    </p>
+</div>
+
+<div class="Text_Div" id="Text_Div_4">
+    <h1>Wie interpretiert SQL ein Passwort ?</h1>
+    <p class="InfoText" id="InfoText_4">
+        - Passwörter werden unverschlüsselt gespeichert. <br><br>
+        - SQL-Syntax darf nicht im String enthalten sein. <br><br>
+        - Umgehung vom String durch das Zeichen <a style="color: green;">'</a>. <br><br>
+        - Beispiel: Pw' <a style="color: green;">OR 1=1</a> wird als SQL-Befehl erkannt.
+    </p>
+</div>
+
+<div class="Text_Div" id="Text_Div_5">
+    <h1>SQL Code auskommentieren</h1>
+    <p class="InfoText" id="InfoText_5">
+        - Code hinter `--` wird ignoriert. <br><br>
+        - So wird alles hinter OR 1=1 unsichtbar. <br><br>
+        - Verhindert die Ausführung weiteren Codes. <br><br>
+        - Beispiel: Pw' OR 1=1 <a style="color: green;">--</a> macht weiteren Code unsichtbar.
+    </p>
+</div>
+
+<div class="Text_Div" id="Text_Div_6">
+    <h1>Weitere Infos</h1>
+    <p class="InfoText" id="InfoText_6">
+        - Jede SQL-Abfrage benötigt ein Semikolon zum Abschließen. <br><br>
+        - Beim Auskommentieren wird das Semikolon entfernt. <br><br>
+        - Es muss manuell hinzugefügt werden: Pw' OR 1=1<a style="color: green;">;</a> -- <br><br>
+        - Beispiel: 'Pw' OR 1=1<a style="color: green;"></a>; -- auskommentierte Anweisung<a style="color: green;">;</a>. <br><br>
+        - Wichtig: Vor und nach `--` muss jeweils ein Leerzeichen.
+    </p>
+</div>
         <div class="Text_Div" id="Text_Div_7">
             <h1>Aufgabe</h1>
                 <p class="InfoText" id="InfoText_7">
                     Bring die Codeschnipsel in die richtige Reinfolge.<br>
+                    (von 1 bis 4)<br>
                     <input type="number" min="1" max="4" id="Schnippsel_1" class="Schnippsel"> OR 1=1<br>
                     <input type="number" min="1" max="4" id="Schnippsel_2" class="Schnippsel"> Pw' <br>
                     <input type="number" min="1" max="4" id="Schnippsel_3" class="Schnippsel"> -- <br>

@@ -2,6 +2,7 @@ let Rechts_Click = document.getElementById("Rechts_Click");
 let Links_Click = document.getElementById("Links_Click");
 let Info_Div = document.getElementsByClassName("Info_Div");
 let Seiten_Zahl = document.getElementById("Seiten_Zahl");
+let Text_Div_0 = document.getElementById("Text_Div_0");
 let Text_Div_1 = document.getElementById("Text_Div_1");
 let Text_Div_2 = document.getElementById("Text_Div_2");
 let Text_Div_3 = document.getElementById("Text_Div_3");
@@ -25,23 +26,35 @@ let Schnipsel_4 = document.getElementById("Schnippsel_4");
 let CheckSchnipsel = document.getElementById("CheckSchnippsel");
 let Korrekter_Code = document.getElementById("Korrekter_Code");
 
-Links_Click.addEventListener("click", function() {
-    Aktuelle_Seitenzahl = parseInt(Seiten_Zahl.innerHTML);
-    console.log(Aktuelle_Seitenzahl);
-    Seiten_Zahl.innerHTML = (parseInt(Seiten_Zahl.innerHTML) - 1);
-    Load_Container();
-});
+Links_Click.onclick = click_btn_left();
+Rechts_Click.onclick = click_btn_right();
 
-Rechts_Click.addEventListener("click", function() {
-    Aktuelle_Seitenzahl = parseInt(Seiten_Zahl.innerHTML);
-    console.log(Aktuelle_Seitenzahl);
-    Seiten_Zahl.innerHTML = (parseInt(Seiten_Zahl.innerHTML) + 1);
-    Load_Container();
-});
+function click_btn_left (){
+    Links_Click.addEventListener("click", function() {
+        Aktuelle_Seitenzahl = parseInt(Seiten_Zahl.innerHTML);
+        console.log(Aktuelle_Seitenzahl);
+        Seiten_Zahl.innerHTML = (parseInt(Seiten_Zahl.innerHTML) - 1);
+        if (Aktuelle_Seitenzahl <= 1) {
+            window.alert("diese Seite gibt es nicht.");
+        }
+        Load_Container();
+    });
+}
+function click_btn_right () {
+    Rechts_Click.addEventListener("click", function() {
+        Aktuelle_Seitenzahl = parseInt(Seiten_Zahl.innerHTML);
+        console.log(Aktuelle_Seitenzahl);
+        Seiten_Zahl.innerHTML = (parseInt(Seiten_Zahl.innerHTML) + 1);
+        if (Aktuelle_Seitenzahl >= 7) {
+            window.alert("diese Seite gibt es nicht.");
+        }
+        Load_Container();
+    });
+}
 
 function Load_Container () {
     Aktuelle_Seitenzahl = parseInt(Seiten_Zahl.innerHTML);
-
+    Text_Div_0.style.visibility = "hidden";
     Text_Div_2.style.visibility = "hidden";
     Text_Div_3.style.visibility = "hidden";
     Text_Div_1.style.visibility = "hidden";
@@ -51,6 +64,8 @@ function Load_Container () {
     Text_Div_7.style.visibility = "hidden";
 
 switch(Aktuelle_Seitenzahl) {
+    case 0: Text_Div_0.style.visibility = "visible";
+    break;
     case 1: Text_Div_1.style.visibility = "visible"; 
     start_Animation(InfoText_1);
     break;
@@ -71,6 +86,8 @@ switch(Aktuelle_Seitenzahl) {
     break;
     case 7: Text_Div_7.style.visibility = "visible";
     start_Animation(InfoText_7);
+    break;
+    case 8: Text_Div_0.style.visibility = "visible";
     break;
     default: break
     }

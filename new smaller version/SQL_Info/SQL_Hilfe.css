@@ -28,16 +28,16 @@ flex-direction: column;
 }
 .Text_Div {
     position: fixed;
-    width: 36.4%;
-    height: 40%;
-    top: 18.7%;
+    width: 41%;
+    height: 53%;
+    top: 20%;
     background-color: #a0a0a0;
     border-radius: 4%;
 }
 #image_Monitor {
     position: fixed;
-    width: 40%;
-    height: 73%;
+    width: 45%;
+    height: 93%;
     top: 10%;
 }
 #PfeilTasten {
@@ -79,6 +79,9 @@ h1 {
     text-align: center;
     color: whitesmoke;
 }
+#Text_Div_0 {
+    visibility: visible;
+}
 #Text_Div_1 {
     visibility: visible;
 }
@@ -106,13 +109,13 @@ h1 {
 }
 #Seiten_p {
     position: fixed;
-    top: 53%;
-    right: 33%;
-    color: green;
+    top: 67%;
+    right: 30%;
+    color: white;
     text-decoration:underline ;
 }
 .InfoText{
-    color: green; /* Neon-Grün für den Text */
+    color: white; /* Neon-Grün für den Text */
     font-family: "Courier New", monospace; /* Monospaced-Schriftart */
     font-size: 18px;
     line-height: 1.6;
